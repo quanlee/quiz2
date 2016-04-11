@@ -1,0 +1,29 @@
+<h1>Show all requests</h1>
+
+<% @requests.each do |r| %>
+<div>
+
+  <div style="display: inline-block; width: 200px">
+    <span><%= r.name %></span>
+  </div>
+  <div style="display: inline-block; width: 300px">
+    <span><%= r.email %></span>
+  </div>
+  <div style="display: inline-block; width: 100px">
+    <span><%= r.department %></span>
+  </div>
+  <div style="display: inline-block; width: 200px">
+    <span><%= r.message_ellipsis %></span>
+  </div>
+  <div style="display: inline-block; width: 200px">
+    <%= link_to 'Edit', edit_request_path(r) %>
+    <%= link_to "Delete", request_path(r) %>
+    <% if r.status == "undone" %>
+    <%= link_to "Done", done_request_path(r) %>
+    <% else %>
+    <%= link_to "Undone", undone_request_path(r) %>
+    <% end %>
+  </div>
+
+</div>
+<% end %>

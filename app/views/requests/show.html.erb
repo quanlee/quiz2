@@ -1,0 +1,22 @@
+<h1>Show</h1>
+
+  <div>
+    <%= @request.name %>
+
+  </div>
+  <div>
+
+    <%= @request.email %>
+  </div>
+  <div>
+
+    <%= @request.department %>
+  </div>
+  <div>
+    <%= @request.message %>
+  </div>
+
+
+<%= link_to 'Delete', delete_request_path(@request),
+                      method: :delete,
+                      data: {confirm: "Are you sure?"} %>

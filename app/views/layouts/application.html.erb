@@ -7,7 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<h1>Support Requests</h1>
+<%= link_to "All Support Requests" , requests_path %>
+|
+<%= link_to "New Support Request", new_request_path %>
+|
+<%= link_to "Search Requests", search_path %>
 <%= yield %>
 
 </body>

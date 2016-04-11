@@ -1,0 +1,24 @@
+<h1>Edit Request</h1>
+<%= @request.errors.full_messages.join(",") %>
+<%= form_for @request do |r| %>
+  <div>
+    <%= r.label :name %>
+    <%= r.text_field :name %>
+  </div>
+  <div>
+    <%= r.label :email %>
+    <%= r.text_field :email %>
+  </div>
+  <div>
+    <%= r.label :department %>
+    <%= r.radio_button( :department, "sales", {"checked" => @request.department == "sales" ? "checked" : ""}) %>Sales
+    <%= r.radio_button( :department, "marketing", {"checked" => @request.department == "marketing" ? "checked" : ""}) %>Marketing
+    <%= r.radio_button( :department, "technical", {"checked" => @request.department == "technical" ? "checked" : ""}) %>Technical
+
+  </div>
+  <div>
+    <%= r.label :message %>
+    <%= r.text_area :message %>
+  </div>
+  <%= r.submit %>
+<% end %>
